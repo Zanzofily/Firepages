@@ -119,7 +119,7 @@ class fbimg {
    /**
      * Get a random photo 
      * ==========================
-     * from gallery
+     * from gallery a random photo different than the last time's posted photo
      *
      */
 
