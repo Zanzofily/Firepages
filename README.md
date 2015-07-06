@@ -28,4 +28,5 @@ Usage
 Credits:
 [facebook-php-sdk-v4](https://github.com/facebook/facebook-php-sdk-v4)
 
+[joshcam MYSQLI Class](https://github.com/joshcam/PHP-MySQLi-Database-Class)
 Enjoy!
