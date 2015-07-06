@@ -3,8 +3,12 @@ session_start();
 
 define('DIR', __DIR__); 
 
- // require facbook library and FBIMG class
-	require_once __DIR__ . '/includes/facebook.php';
+
+ // configuration file
+	require DIR . '/src/db.php';
+
+	require_once DIR . '/vendor/autoload.php';
+
 	require_once __DIR__ . '/includes/fbimg.php';
 
   $fbimg = new fbimg;
@@ -19,8 +23,6 @@ define('DIR', __DIR__);
 		use Facebook\GraphObject;
 
 		FacebookSession::setDefaultApplication( $config['appID'] , $config['appSecret'] );
-	
-		$login = new FacebookRedirectLoginHelper( $config['redirect'] );
 
 		try {
 		  $usession = new FacebookSession( $fbimg->requested['access'] );
@@ -73,5 +75,9 @@ define('DIR', __DIR__);
 				die('Something went wrong.');
 			}
 
-	} else
-		header("Location: {$login->getLoginUrl(array('email','manage_pages','publish_actions','publish_pages','photo_upload'))}");
+	} else {
+
+		$login = new FacebookRedirectLoginHelper( $config['redirect'] );
+		header("Location: {$login->getLoginUrl(array('email','manage_pages','publish_actions','publish_pages','photo_upload'))}");	
+
+	}

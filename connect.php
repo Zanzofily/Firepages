@@ -1,18 +1,20 @@
 <?php
 session_start();
 
-define('DIR', dirname(__FILE__));
+define('DIR', dirname(__FILE__) . '/');
 
-	require_once __DIR__ . '/includes/facebook.php';
+ // configuration file
+	require DIR . '/src/db.php';
+	require_once DIR . '/vendor/autoload.php';
 
-		use Facebook\FacebookSession;
-		use Facebook\FacebookRedirectLoginHelper;
-		use Facebook\FacebookRequest;
-		use Facebook\FacebookResponse;
-		use Facebook\FacebookSDKException;
-		use Facebook\FacebookRequestException;
-		use Facebook\FacebookAuthorizationException;
-		use Facebook\GraphObject;
+	use Facebook\FacebookSession;
+	use Facebook\FacebookRedirectLoginHelper;
+	use Facebook\FacebookRequest;
+	use Facebook\FacebookResponse;
+	use Facebook\FacebookSDKException;
+	use Facebook\FacebookRequestException;
+	use Facebook\FacebookAuthorizationException;
+	use Facebook\GraphObject;
 
 		FacebookSession::setDefaultApplication( $config['appID'] , $config['appSecret'] );
 

@@ -1,0 +1,25 @@
+{
+    "name": "zanzofily/firepages",
+    "description": "Firepages- The best auto photo posting script (from folder) for facebook pages.",
+    "keywords": ["facebook", "sdk","autopost"],
+    "type": "library",
+    "homepage": "https://github.com/Zanzofily/Firepages",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Mostafa Kassem",
+            "email": "elkasem2012@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "facebook/php-sdk-v4": "4.0.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "Facebook\\": "src/Facebook/"
+        }
+    }
+}
