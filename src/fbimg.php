@@ -15,6 +15,15 @@ class fbimg {
  
   public $requested = array( 'page' => '' , 'user'  => '' , 'key'  => '' );
   private $db = null , $photo = null;
+  
+
+  /**
+    *  Class constructor 
+    *  =================
+    *   Global database and cron key
+    *   Check GET variables
+    *
+    */
 
    public function __construct() {
 
@@ -47,6 +56,13 @@ class fbimg {
 
    }
 
+   /**
+     * Checking if user is valid
+     * ==========================
+     * Assigning user access token
+     *
+     */
+
    public function check_user() {
 		
 		$this->db->where ( "fbid" , $this->requested['user'] );
@@ -59,6 +75,12 @@ class fbimg {
 
    }
 
+   /**
+     * Getting last posted image 
+     * ==========================
+     * works on the current page 
+     *
+     */
    public function get_last_img() {
 
 		$this->db->where ( "pageID" , $this->requested['page'] );
@@ -71,6 +93,12 @@ class fbimg {
 
    }
 
+   /**
+     * Save the post 
+     * ==========================
+     * Preventing repeating the same photo twice
+     *
+     */
    public function save_post () {
    		
    		$this->db->where ( "pageID" , $this->requested['page']);
@@ -87,6 +115,13 @@ class fbimg {
 		 		$this->db->insert ('share', $data);
 
    }
+
+   /**
+     * Get a random photo 
+     * ==========================
+     * from gallery
+     *
+     */
 
    public function get_image() {
 		
