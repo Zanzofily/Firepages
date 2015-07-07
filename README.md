@@ -7,7 +7,7 @@ Usage
 -----
 (1) Download the contents of Zanzofily/Firepages as a zip file.
 
-(2) Unzip the file and install composer :
+(2) Setup [composer](https://getcomposer.org/download/), Unzip the script files and run (composer install) on the folder :
 
 ![alt tag](http://im83.gulfup.com/X1xeNg.png)
 
